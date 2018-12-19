@@ -14,15 +14,20 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h2><code>TdDialogService</code></h2>
-    <p>Service provided with methods that wrap the @angular/material [MatDialog] service and provide an easier experience for simple dialogs.</p>
+    <p>
+      Service provided with methods that wrap the @angular/material [MatDialog] service and provide an easier experience
+      for simple dialogs.
+    </p>
     <p>Note: if no [ViewContainerRef] is provided, [TdDialogService] will throw an error.</p>
     <h3>Methods:</h3>
-    <p>The [TdDialogService] service has {{dialogServiceMethods.length}} properties:</p>
+    <p>The [TdDialogService] service has {{ dialogServiceMethods.length }} properties:</p>
     <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="dialogServiceMethods">
         <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
+          <h3 matLine>
+            {{ attr.name }}: <span>{{ attr.type }}</span>
+          </h3>
+          <p matLine>{{ attr.description }}</p>
         </a>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>

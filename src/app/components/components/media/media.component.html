@@ -9,16 +9,21 @@
         <mat-list-item>
           <mat-icon [@tdJello]="demo.value" matListAvatar>
             <span *ngIf="demo.value; else offStateIcon" class="tc-primary">check_circle</span>
-            <ng-template #offStateIcon>
-              <span>highlight_off</span>
-            </ng-template>
+            <ng-template #offStateIcon> <span>highlight_off</span> </ng-template>
           </mat-icon>
-          <h3 [tdMediaToggle]="demo.query" [mediaClasses]="['tc-primary']" [mediaAttributes]="{title: 'It matches!!!'}" matLine> {{demo.query}}</h3>
-          <p matLine> matches: {{demo.value}} </p>
+          <h3
+            [tdMediaToggle]="demo.query"
+            [mediaClasses]="['tc-primary']"
+            [mediaAttributes]="{ title: 'It matches!!!' }"
+            matLine
+          >
+            {{ demo.query }}
+          </h3>
+          <p matLine>matches: {{ demo.value }}</p>
         </mat-list-item>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
-    </mat-list>    
+    </mat-list>
   </mat-card-content>
 </mat-card>
 <mat-card>
@@ -28,25 +33,28 @@
   <mat-card-content>
     <h2><code>TdMediaService</code></h2>
     <p>This service is designed to provide basic media query evaluation for responsive applications.</p>
-    <p>It has pre-programmed support for media queries that match the layout 
+    <p>
+      It has pre-programmed support for media queries that match the layout
       <a href="https://material.google.com/layout/responsive-ui.html" target="_blank">breakpoints</a>:
     </p>
     <mat-list>
       <ng-template let-bpoint let-last="last" ngFor [ngForOf]="mediaBreakpoints">
         <a mat-list-item layout-align="row">
-          <h3 matLine> {{bpoint.breakpoint}}</h3>
-          <p matLine> {{bpoint.query}} </p>
+          <h3 matLine>{{ bpoint.breakpoint }}</h3>
+          <p matLine>{{ bpoint.query }}</p>
         </a>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
     </mat-list>
     <h3>Methods:</h3>
-    <p>The <code>TdMediaService</code> service has {{mediaServiceMethods.length}} properties:</p>
+    <p>The <code>TdMediaService</code> service has {{ mediaServiceMethods.length }} properties:</p>
     <mat-list>
       <ng-template let-attr let-last="last" ngFor [ngForOf]="mediaServiceMethods">
         <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
+          <h3 matLine>
+            {{ attr.name }}: <span>{{ attr.type }}</span>
+          </h3>
+          <p matLine>{{ attr.description }}</p>
         </a>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
@@ -93,7 +101,10 @@
       ]]>
     </td-highlight>
     <p>Note: Always unsubscribe from [Observable] objects when not using them anymore.</p>
-    <p>A good way of doing it is in the <code>ngOnDestroy</code> component life-cycle hook provided by the [OnDestroy] interface.</p>
+    <p>
+      A good way of doing it is in the <code>ngOnDestroy</code> component life-cycle hook provided by the [OnDestroy]
+      interface.
+    </p>
     <h3>Setup:</h3>
     <p>Import the [CovalentMediaModule] in your NgModule:</p>
     <!-- prettier-ignore -->
@@ -118,14 +129,19 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h2><code>tdMediaToggle</code></h2>
-    <p>Simply add the <code>tdMediaToggle</code> attibute with a "media query" value to the element you want to modify depending on screen size.</p>
+    <p>
+      Simply add the <code>tdMediaToggle</code> attibute with a "media query" value to the element you want to modify
+      depending on screen size.
+    </p>
     <h3>Properties:</h3>
-    <p>The <code>tdMediaToggle</code> directive has {{mediaAttrs.length}} properties:</p>
+    <p>The <code>tdMediaToggle</code> directive has {{ mediaAttrs.length }} properties:</p>
     <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="mediaAttrs">
         <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
+          <h3 matLine>
+            {{ attr.name }}: <span>{{ attr.type }}</span>
+          </h3>
+          <p matLine>{{ attr.description }}</p>
         </a>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
@@ -142,4 +158,4 @@
       ]]>
     </td-highlight>
   </mat-card-content>
- </mat-card>
+</mat-card>

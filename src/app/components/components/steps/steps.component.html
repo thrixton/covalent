@@ -9,32 +9,61 @@
         <ng-template matTabLabel>Demo</ng-template>
         <div layout="row" layout-align="start center">
           <mat-button-toggle-group (change)="modeChange()" name="mode" [(ngModel)]="mode">
-            <mat-button-toggle matTooltip="Vertical Stepper" [value]="0"><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></mat-button-toggle>
-            <mat-button-toggle matTooltip="Horizontal Stepper" [value]="1"><mat-icon>swap_horiz</mat-icon> <span hide-md hide-sm hide-xs>Horizontal</span></mat-button-toggle>
-            <mat-button-toggle matTooltip="Responsive (changes from horizontal to vertical)" [value]="2"><mat-icon>devices</mat-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></mat-button-toggle>
+            <mat-button-toggle matTooltip="Vertical Stepper" [value]="0"
+              ><mat-icon>swap_vert</mat-icon> <span hide-md hide-sm hide-xs>Vertical</span></mat-button-toggle
+            >
+            <mat-button-toggle matTooltip="Horizontal Stepper" [value]="1"
+              ><mat-icon>swap_horiz</mat-icon> <span hide-md hide-sm hide-xs>Horizontal</span></mat-button-toggle
+            >
+            <mat-button-toggle matTooltip="Responsive (changes from horizontal to vertical)" [value]="2"
+              ><mat-icon>devices</mat-icon> <span hide-md hide-sm hide-xs>Responsive (gt-sm)</span></mat-button-toggle
+            >
           </mat-button-toggle-group>
         </div>
-        <p>Active/Deactive Event for Step 1: {{activeDeactiveStep1Msg}}</p>
-        <h3>{{horizontal ? 'Horizontal Mode' : 'Vertical Mode'}}</h3>
+        <p>Active/Deactive Event for Step 1: {{ activeDeactiveStep1Msg }}</p>
+        <h3>{{ horizontal ? 'Horizontal Mode' : 'Vertical Mode' }}</h3>
         <td-steps [mode]="horizontal ? 'horizontal' : 'vertical'">
-          <td-step #step1 label="Basic Usage" sublabel="Toggle between active and inactive and emit events." [active]="true" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
+          <td-step
+            #step1
+            label="Basic Usage"
+            sublabel="Toggle between active and inactive and emit events."
+            [active]="true"
+            [disabled]="disabled"
+            (activated)="activeStep1Event()"
+            (deactivated)="deactiveStep1Event()"
+          >
             <ng-template td-step-label><span>Basic Usage (template)</span></ng-template>
             Include any content you like for an active stepper
           </td-step>
-          <td-step #step2 label="Required State" sublabel="Toggle between active and inactive while in required state and disable ripple." [state]="stateStep2" [disabled]="disabled" disableRipple>
+          <td-step
+            #step2
+            label="Required State"
+            sublabel="Toggle between active and inactive while in required state and disable ripple."
+            [state]="stateStep2"
+            [disabled]="disabled"
+            disableRipple
+          >
             This step is required!
             <ng-template td-step-actions>
-              <button mat-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">Toggle Require</button>
+              <button mat-raised-button color="primary" (click)="toggleRequiredStep2()" class="text-upper">
+                Toggle Require
+              </button>
               <button mat-button (click)="step2.active = false" class="text-upper">Cancel</button>
             </ng-template>
           </td-step>
-          <td-step #step3 label="Complete State" sublabel="Toggle between active and inactive while in complete state." [state]="stateStep3" [disabled]="disabled">
+          <td-step
+            #step3
+            label="Complete State"
+            sublabel="Toggle between active and inactive while in complete state."
+            [state]="stateStep3"
+            [disabled]="disabled"
+          >
             Mark this step complete and get a summary
-            <ng-template td-step-summary>
-              Use an optional step summary to summarize the info in this step
-            </ng-template>
+            <ng-template td-step-summary> Use an optional step summary to summarize the info in this step </ng-template>
             <ng-template td-step-actions>
-              <button mat-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">Toggle Complete</button>
+              <button mat-raised-button color="primary" (click)="toggleCompleteStep3()" class="text-upper">
+                Toggle Complete
+              </button>
               <button mat-button (click)="step3.active = false" class="text-upper">Cancel</button>
             </ng-template>
           </td-step>
@@ -117,14 +146,19 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h2><code><![CDATA[<td-steps>]]></code></h2>
-    <p>Simply wrap the <code><![CDATA[<td-step>]]></code> elements you need in a <code><![CDATA[<td-steps>]]></code> element.</p>
+    <p>
+      Simply wrap the <code><![CDATA[<td-step>]]></code> elements you need in a
+      <code><![CDATA[<td-steps>]]></code> element.
+    </p>
     <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-steps>]]></code> component has {{stepsAttrs.length}} properties:</p>
+    <p>The <code><![CDATA[<td-steps>]]></code> component has {{ stepsAttrs.length }} properties:</p>
     <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepsAttrs">
         <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
+          <h3 matLine>
+            {{ attr.name }}: <span>{{ attr.type }}</span>
+          </h3>
+          <p matLine>{{ attr.description }}</p>
         </a>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>
@@ -173,25 +207,36 @@
       ]]>
     </td-highlight>
   </mat-card-content>
- </mat-card>
- <mat-card>
+</mat-card>
+<mat-card>
   <mat-card-title>TdStepComponent</mat-card-title>
   <mat-card-subtitle>How to use this component</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-card-content>
     <h2><code><![CDATA[<td-step>]]></code></h2>
-    <p>Add as many <code><![CDATA[<td-step>]]></code> elements you need wrapped by a <code><![CDATA[<td-steps>]]></code> element for control.</p>
-    <p>Uses <code>StepState</code> enum to define step state value [<code>StepState.None</code>, <code>StepState.Required</code> and <code>StepState.Complete</code>].</p>
+    <p>
+      Add as many <code><![CDATA[<td-step>]]></code> elements you need wrapped by a
+      <code><![CDATA[<td-steps>]]></code> element for control.
+    </p>
+    <p>
+      Uses <code>StepState</code> enum to define step state value [<code>StepState.None</code>,
+      <code>StepState.Required</code> and <code>StepState.Complete</code>].
+    </p>
     <p>Enum values can be replaced with strings ["none", "required" and "complete"].</p>
-    <p>Note: Components in Angular do not have 2-way binding, so the active variable might be off sync with its [TdStepComponent] sometimes.</p>
+    <p>
+      Note: Components in Angular do not have 2-way binding, so the active variable might be off sync with its
+      [TdStepComponent] sometimes.
+    </p>
     <p>You can keep it in sync with the (activated/deactivated) events if there is a need to do it.</p>
     <h3>Properties:</h3>
-    <p>The <code><![CDATA[<td-step>]]></code> component has {{stepAttrs.length}} properties:</p>
+    <p>The <code><![CDATA[<td-step>]]></code> component has {{ stepAttrs.length }} properties:</p>
     <mat-list>
       <ng-template let-attr let-last="attr" ngFor [ngForOf]="stepAttrs">
         <a mat-list-item layout-align="row">
-          <h3 matLine> {{attr.name}}: <span>{{attr.type}}</span></h3>
-          <p matLine> {{attr.description}} </p>
+          <h3 matLine>
+            {{ attr.name }}: <span>{{ attr.type }}</span>
+          </h3>
+          <p matLine>{{ attr.description }}</p>
         </a>
         <mat-divider *ngIf="!last"></mat-divider>
       </ng-template>

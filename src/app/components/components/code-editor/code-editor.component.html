@@ -7,17 +7,41 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <a mat-button color="accent" href="https://github.com/Teradata/covalent-code-editor" target="_blank" class="text-upper">Github Repo</a>
-    <a mat-button color="accent" href="https://www.npmjs.com/package/@covalent/code-editor" target="_blank" class="text-upper">npm Module</a>
+    <a
+      mat-button
+      color="accent"
+      href="https://github.com/Teradata/covalent-code-editor"
+      target="_blank"
+      class="text-upper"
+      >Github Repo</a
+    >
+    <a
+      mat-button
+      color="accent"
+      href="https://www.npmjs.com/package/@covalent/code-editor"
+      target="_blank"
+      class="text-upper"
+      >npm Module</a
+    >
   </mat-card-actions>
 </mat-card>
 <mat-card>
   <mat-card-title>Basic example</mat-card-title>
-  <mat-card-subtitle>Editor running in browser <br>(change language, theme, right click context menu, syntax highlighting, and more)</mat-card-subtitle>
+  <mat-card-subtitle
+    >Editor running in browser <br />(change language, theme, right click context menu, syntax highlighting, and
+    more)</mat-card-subtitle
+  >
   <mat-divider></mat-divider>
   <mat-card-content>
     <div layout="row" layout-align="start center">
-      <td-code-editor #editor class="editor" [theme]="editorTheme" flex [language]="editorLanguage" [(ngModel)]="editorVal"></td-code-editor>
+      <td-code-editor
+        #editor
+        class="editor"
+        [theme]="editorTheme"
+        flex
+        [language]="editorLanguage"
+        [(ngModel)]="editorVal"
+      ></td-code-editor>
     </div>
     <p>Editor Output:</p>
     <div layout="row" layout-align="start center">

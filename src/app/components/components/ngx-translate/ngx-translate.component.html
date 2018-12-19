@@ -2,13 +2,15 @@
   <mat-card-title>NGX-Translate (External library)</mat-card-title>
   <mat-card-subtitle>i18n library for Angular</mat-card-subtitle>
   <mat-divider></mat-divider>
-  <mat-card-content>
-    An implementation of Angular Translate for Angular.
-  </mat-card-content>
+  <mat-card-content> An implementation of Angular Translate for Angular. </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in Spanish</button>
-    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in English</button>
+    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">
+      See demos in Spanish
+    </button>
+    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">
+      See demos in English
+    </button>
   </mat-card-actions>
 </mat-card>
 <mat-card>
@@ -99,8 +101,12 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in Spanish</button>
-    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in English</button>
+    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">
+      See demos in Spanish
+    </button>
+    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">
+      See demos in English
+    </button>
   </mat-card-actions>
 </mat-card>
 <mat-card>
@@ -112,9 +118,12 @@
       <mat-tab [label]="'DEMO_TAB' | translate">
         <div layout="row" layout-align="start center" layout-padding>
           <mat-form-field flex="40">
-            <mat-select [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
-                        [matTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
-                        [(ngModel)]="valueCountForPlural" flex>
+            <mat-select
+              [placeholder]="'DEMO_ONE.SELECT.PLACEHOLDER' | translate"
+              [matTooltip]="'DEMO_ONE.SELECT.TOOLTIP' | translate"
+              [(ngModel)]="valueCountForPlural"
+              flex
+            >
               <mat-option [value]="0">0</mat-option>
               <mat-option [value]="1">1</mat-option>
               <mat-option [value]="4">4</mat-option>
@@ -125,7 +134,9 @@
           <div [ngPlural]="valueCountForPlural">
             <ng-template ngPluralCase="=undefined">{{ 'DEMO_ONE.COUNT.NONE' | translate }}</ng-template>
             <ng-template ngPluralCase="=1">{{ 'DEMO_ONE.COUNT.SINGLE' | translate }}</ng-template>
-            <ng-template ngPluralCase="other">{{ 'DEMO_ONE.COUNT.PLURAL' | translate:{value: valueCountForPlural} }}</ng-template>
+            <ng-template ngPluralCase="other">{{
+              'DEMO_ONE.COUNT.PLURAL' | translate: { value: valueCountForPlural }
+            }}</ng-template>
           </div>
         </div>
       </mat-tab>
@@ -218,8 +229,12 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in Spanish</button>
-    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in English</button>
+    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">
+      See demos in Spanish
+    </button>
+    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">
+      See demos in English
+    </button>
   </mat-card-actions>
 </mat-card>
 <mat-card>
@@ -233,14 +248,14 @@
           <mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
             <h4 matLine>Any person</h4>
-            <p translate [translateParams]="{value: (123000020 | number)}" matLine>DEMO_TWO.BALANCE</p>
-            <span flex="50">{{dateToFormat | date:'medium'}}</span>
+            <p translate [translateParams]="{ value: 123000020 | number }" matLine>DEMO_TWO.BALANCE</p>
+            <span flex="50">{{ dateToFormat | date: 'medium' }}</span>
           </mat-list-item>
           <mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
             <h4 matLine>Another person</h4>
-            <p translate [translateParams]="{value: (1000.20 | number:'1.2-2')}" matLine>DEMO_TWO.BALANCE</p>
-            <span flex="50">{{dateToFormat | date:'medium'}}</span>
+            <p translate [translateParams]="{ value: 1000.2 | number: '1.2-2' }" matLine>DEMO_TWO.BALANCE</p>
+            <span flex="50">{{ dateToFormat | date: 'medium' }}</span>
           </mat-list-item>
         </mat-list>
       </mat-tab>
@@ -309,8 +324,12 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in Spanish</button>
-    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in English</button>
+    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">
+      See demos in Spanish
+    </button>
+    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">
+      See demos in English
+    </button>
   </mat-card-actions>
 </mat-card>
 <mat-card>
@@ -321,7 +340,9 @@
     <mat-tab-group mat-stretch-tabs>
       <mat-tab [label]="'DEMO_TAB' | translate">
         <div class="pad">
-          <button mat-raised-button color="accent" (click)="openAlert()" class="text-upper">{{'DEMO_THREE.OPEN_ALERT' | translate}}</button>
+          <button mat-raised-button color="accent" (click)="openAlert()" class="text-upper">
+            {{ 'DEMO_THREE.OPEN_ALERT' | translate }}
+          </button>
         </div>
       </mat-tab>
       <mat-tab [label]="'CODE_TAB' | translate">
@@ -398,7 +419,11 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">See demos in Spanish</button>
-    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">See demos in English</button>
+    <button mat-button color="accent" *ngIf="selectedLanguage === 'en'" (click)="languageChange('es')">
+      See demos in Spanish
+    </button>
+    <button mat-button color="primary" *ngIf="selectedLanguage === 'es'" (click)="languageChange('en')">
+      See demos in English
+    </button>
   </mat-card-actions>
 </mat-card>

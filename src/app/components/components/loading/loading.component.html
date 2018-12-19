@@ -4,15 +4,18 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h3 class="mat-title">[tdLoading] directive with (*) syntax</h3>
-    <h4 class="mat-subheading-2">with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent [tdLoadingColor]</h4>
+    <h4 class="mat-subheading-2">
+      with indetederminate [tdLoadingMode], circular [tdLoadingType], overlay [tdLoadingStrategy], accent
+      [tdLoadingColor]
+    </h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+        <div
+          *tdLoading="'overlayStarSyntax'; mode: 'indeterminate'; type: 'circle'; strategy: 'overlay'; color: 'accent'"
+        >
           <div layout="row">
-            <mat-form-field flex>
-              <input matInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
-            </mat-form-field>
+            <mat-form-field flex> <input matInput [(ngModel)]="overlayDemo.name" placeholder="Name" /> </mat-form-field>
           </div>
           <div layout="row">
             <mat-form-field flex>
@@ -21,7 +24,9 @@
           </div>
         </div>
         <div layout="row">
-          <button mat-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">
+            Toggle Loader
+          </button>
         </div>
       </mat-tab>
       <mat-tab>
@@ -85,15 +90,21 @@
 <mat-card>
   <mat-card-content>
     <h3 class="mat-title">[tdLoading] directive with template syntax</h3>
-    <h4 class="mat-subheading-2">with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]</h4>
+    <h4 class="mat-subheading-2">
+      with determinate [tdLoadingMode], linear [tdLoadingType], replace [tdLoadingStrategy], warn [tdLoadingColor]
+    </h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <ng-template tdLoading="replaceTemplateSyntax" tdLoadingMode="determinate" tdLoadingType="linear" tdLoadingStrategy="replace" tdLoadingColor="warn">
+        <ng-template
+          tdLoading="replaceTemplateSyntax"
+          tdLoadingMode="determinate"
+          tdLoadingType="linear"
+          tdLoadingStrategy="replace"
+          tdLoadingColor="warn"
+        >
           <div layout="row">
-            <mat-form-field flex>
-              <input matInput [(ngModel)]="replaceDemo.name" placeholder="Name"/>
-            </mat-form-field>
+            <mat-form-field flex> <input matInput [(ngModel)]="replaceDemo.name" placeholder="Name" /> </mat-form-field>
           </div>
           <div layout="row">
             <mat-form-field flex>
@@ -102,7 +113,15 @@
           </div>
         </ng-template>
         <div layout="row">
-          <button mat-button color="primary" [disabled]="replaceTemplateSyntaxDisabled" (click)="toggleReplaceTemplateSyntax()" class="text-upper">Toggle Loader</button>
+          <button
+            mat-button
+            color="primary"
+            [disabled]="replaceTemplateSyntaxDisabled"
+            (click)="toggleReplaceTemplateSyntax()"
+            class="text-upper"
+          >
+            Toggle Loader
+          </button>
         </div>
       </mat-tab>
       <mat-tab>
@@ -176,12 +195,10 @@
             <mat-list-item>
               <div matListAvatar>
                 <ng-template tdLoading [tdLoadingUntil]="!item.value" tdLoadingStrategy="overlay">
-                  <mat-icon matListAvatar>
-                    settings_backup_restore
-                  </mat-icon>
+                  <mat-icon matListAvatar> settings_backup_restore </mat-icon>
                 </ng-template>
               </div>
-              <h3 matLine>{{item.label}}</h3>
+              <h3 matLine>{{ item.label }}</h3>
             </mat-list-item>
             <mat-divider *ngIf="!last"></mat-divider>
           </ng-template>
@@ -234,20 +251,26 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <div *tdLoading="let items until listObservable | async; color: 'accent'">
+        <div *tdLoading="let items; until: (listObservable | async); color: 'accent'">
           <mat-list>
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
               <mat-list-item>
-                <mat-slide-toggle matLine [checked]="item.value">
-                  {{item.label}}
-                </mat-slide-toggle>
+                <mat-slide-toggle matLine [checked]="item.value"> {{ item.label }} </mat-slide-toggle>
               </mat-list-item>
               <mat-divider *ngIf="!last"></mat-divider>
             </ng-template>
           </mat-list>
         </div>
         <div layout="row">
-          <button mat-button color="primary" [disabled]="listObservableDisabled" (click)="createObservableList()" class="text-upper">Create observable</button>
+          <button
+            mat-button
+            color="primary"
+            [disabled]="listObservableDisabled"
+            (click)="createObservableList()"
+            class="text-upper"
+          >
+            Create observable
+          </button>
         </div>
       </mat-tab>
       <mat-tab>
@@ -306,18 +329,21 @@
         <ng-template tdLoading [tdLoadingUntil]="!loading" tdLoadingStrategy="overlay" tdLoadingType="linear">
           <div layout="row">
             <mat-form-field flex>
-              <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name"/>
+              <input matInput [(ngModel)]="untilOverlayDemo.name" placeholder="Name" />
             </mat-form-field>
           </div>
           <div layout="row">
             <mat-form-field flex>
-              <textarea matInput [(ngModel)]="untilOverlayDemo.description" placeholder="Description" rows="4"></textarea>
+              <textarea
+                matInput
+                [(ngModel)]="untilOverlayDemo.description"
+                placeholder="Description"
+                rows="4"
+              ></textarea>
             </mat-form-field>
           </div>
         </ng-template>
-        <div class="pad-sm">
-          <mat-slide-toggle [(ngModel)]="loading">Loading Mask</mat-slide-toggle>
-        </div>
+        <div class="pad-sm"><mat-slide-toggle [(ngModel)]="loading">Loading Mask</mat-slide-toggle></div>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -369,7 +395,9 @@
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
         <div layout="row">
-          <button mat-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleDefaultFullscreenDemo()" class="text-upper">
+            Toggle Loader
+          </button>
         </div>
       </mat-tab>
       <mat-tab>
@@ -411,13 +439,15 @@
 </mat-card>
 <mat-card>
   <mat-card-content>
-   <h3 class="mat-title">Custom [TdLoading] linear at top of page</h3>
+    <h3 class="mat-title">Custom [TdLoading] linear at top of page</h3>
     <h4 class="mat-subheading-2">with indeterminate [mode], linear [type], accent [color]</h4>
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
         <div layout="row">
-          <button mat-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">Toggle Loader</button>
+          <button mat-button color="primary" (click)="toggleConfigFullscreenDemo()" class="text-upper">
+            Toggle Loader
+          </button>
         </div>
       </mat-tab>
       <mat-tab>

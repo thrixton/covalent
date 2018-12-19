@@ -10,8 +10,7 @@
   <mat-card>
     <mat-card-title>
       <div layout="row" layout-align="start center">
-        <span>Example</span>
-        <span flex></span>
+        <span>Example</span> <span flex></span>
         <a href="https://stackblitz.com/edit/fab-patterns" target="_blank" matTooltip="View Code" mat-icon-button>
           <mat-icon>launch</mat-icon>
         </a>
@@ -40,7 +39,11 @@
         </mat-list>
         <h2 class="push-top push-bottom-none">Guidelines</h2>
         <mat-nav-list class="pull-left pull-right">
-          <a mat-list-item href="https://material.io/guidelines/components/buttons-floating-action-button.html" target="_blank">
+          <a
+            mat-list-item
+            href="https://material.io/guidelines/components/buttons-floating-action-button.html"
+            target="_blank"
+          >
             <mat-icon>launch</mat-icon>
             <h3 matLine>Material Design</h3>
             <p matLine>FAB Guidelines</p>
@@ -53,17 +56,13 @@
           </a>
         </mat-nav-list>
       </div>
-      <div layout="row" flex-gt-sm>
-        <iframe flex class="iframe" [src]="source"></iframe>
-      </div>
+      <div layout="row" flex-gt-sm><iframe flex class="iframe" [src]="source"></iframe></div>
     </div>
   </mat-card>
   <div layout-gt-xs="row">
     <div flex-gt-xs="50">
       <mat-card>
-        <mat-card-title>
-          <span class="tc-green-600">Do.</span>
-        </mat-card-title>
+        <mat-card-title> <span class="tc-green-600">Do.</span> </mat-card-title>
         <mat-divider></mat-divider>
         <mat-list>
           <mat-list-item>
@@ -79,9 +78,7 @@
     </div>
     <div flex-gt-xs="50">
       <mat-card>
-        <mat-card-title>
-          <span class="tc-red-600">Don't.</span>
-        </mat-card-title>
+        <mat-card-title> <span class="tc-red-600">Don't.</span> </mat-card-title>
         <mat-divider></mat-divider>
         <mat-list>
           <mat-list-item>

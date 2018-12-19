@@ -9,11 +9,12 @@
     <td-highlight lang="html">
     <![CDATA[ <mat-icon>home</mat-icon> ]]>
     </td-highlight>
-    <p>
-      which renders <mat-icon>home</mat-icon>
-    </p>
+    <p>which renders <mat-icon>home</mat-icon></p>
     <h3>SVG Icons (from Safe URLS)</h3>
-    <p>SVG icons have to be sanitized before they can be used with [DomSanitizer] and then icons need to be registered in [MatIconRegistry] so it can be referred later on:</p>
+    <p>
+      SVG icons have to be sanitized before they can be used with [DomSanitizer] and then icons need to be registered in
+      [MatIconRegistry] so it can be referred later on:
+    </p>
     <p>Typescript:</p>
     <!-- prettier-ignore -->
     <td-highlight lang="typescript">
@@ -38,6 +39,6 @@
   <mat-divider></mat-divider>
   <mat-card-actions>
     <a mat-button color="accent" target="_blank" href="https://material.io/icons/" class="text-upper">Search Icons</a>
-    <a mat-button [routerLink]="['../../style-guide','iconography']" class="text-upper">Icon Guide</a>
+    <a mat-button [routerLink]="['../../style-guide', 'iconography']" class="text-upper">Icon Guide</a>
   </mat-card-actions>
 </mat-card>

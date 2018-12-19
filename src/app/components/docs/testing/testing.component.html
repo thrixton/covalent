@@ -4,7 +4,7 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <h3>Install TSLint for TypeScript</h3>
-     <p>First ensure you have Protractor and TSLint installed, setup for TypeScript and updated Webdriver</p>
+    <p>First ensure you have Protractor and TSLint installed, setup for TypeScript and updated Webdriver</p>
     <!-- prettier-ignore -->
     <td-highlight lang="bash">
       npm install -g tslint typescript
@@ -12,29 +12,30 @@
       webdriver-manager update
       ./node_modules/.bin/webdriver-manager update
     </td-highlight>
-     <h3>Running unit tests</h3>
-     <p>Tests will execute after a build is executed via Karma, and it will automatically watch your files for changes.
-     </p>
-     <p>
-      You can run tests a single time via --watch=false, and turn off building of the app via --build=false (useful for running it at the same time as ng serve).
+    <h3>Running unit tests</h3>
+    <p>
+      Tests will execute after a build is executed via Karma, and it will automatically watch your files for changes.
+    </p>
+    <p>
+      You can run tests a single time via --watch=false, and turn off building of the app via --build=false (useful for
+      running it at the same time as ng serve).
     </p>
     <!-- prettier-ignore -->
     <td-highlight lang="bash">
       ng test
     </td-highlight>
     <h3>Running end-to-end tests</h3>
-    <p>Before running the tests make sure you are serving the app via ng serve.
-    </p>
-    <p>
-      End-to-end tests are ran via Protractor.
-    </p>
+    <p>Before running the tests make sure you are serving the app via ng serve.</p>
+    <p>End-to-end tests are ran via Protractor.</p>
 
     <!-- prettier-ignore -->
     <td-highlight lang="bash">
       ng e2e
     </td-highlight>
     <h3>Linting and formatting code</h3>
-    <p>You can lint your app code by running ng lint. This will use the lint npm script that in generated projects uses tslint.
+    <p>
+      You can lint your app code by running ng lint. This will use the lint npm script that in generated projects uses
+      tslint.
     </p>
     <!-- prettier-ignore -->
     <td-highlight lang="bash">
@@ -43,7 +44,14 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <a mat-button color="accent" target="_blank" href="https://github.com/angular/angular-cli/wiki/test" class="text-upper">Testing Docs</a>
+    <a
+      mat-button
+      color="accent"
+      target="_blank"
+      href="https://github.com/angular/angular-cli/wiki/test"
+      class="text-upper"
+      >Testing Docs</a
+    >
   </mat-card-actions>
 </mat-card>
 <mat-card>

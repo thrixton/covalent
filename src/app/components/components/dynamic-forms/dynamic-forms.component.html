@@ -3,10 +3,7 @@
   <mat-card-subtitle>Build forms from a JS object</mat-card-subtitle>
   <mat-divider></mat-divider>
   <mat-toolbar hide show-gt-md>
-    <div layout="row" flex>
-      <span flex="50">Generated Form</span>
-      <span flex="50">Form Builder</span>
-    </div>
+    <div layout="row" flex><span flex="50">Generated Form</span> <span flex="50">Form Builder</span></div>
   </mat-toolbar>
   <mat-divider hide show-gt-md></mat-divider>
   <div layout-gt-md="row">
@@ -31,19 +28,17 @@
               <ng-template let-control="control" [tdDynamicFormsError]="element.name">
                 <span *ngIf="control.touched || !control.pristine">
                   <span *ngIf="control.hasError('required')">Required</span>
-                  <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
-                  <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
-                  <span *ngIf="control.hasError('minlength')">MinLength value: {{element.minLength}}</span>
-                  <span *ngIf="control.hasError('maxlength')">MaxLength value: {{element.maxLength}}</span>
+                  <span *ngIf="control.hasError('min')">Min value: {{ element.min }}</span>
+                  <span *ngIf="control.hasError('max')">Max value: {{ element.max }}</span>
+                  <span *ngIf="control.hasError('minlength')">MinLength value: {{ element.minLength }}</span>
+                  <span *ngIf="control.hasError('maxlength')">MaxLength value: {{ element.maxLength }}</span>
                 </span>
               </ng-template>
             </ng-template>
           </td-dynamic-forms>
         </div>
         <mat-card-actions>
-          <button mat-raised-button color="primary" class="text-upper" [disabled]="!dynamicForm.valid">
-            Submit
-          </button>
+          <button mat-raised-button color="primary" class="text-upper" [disabled]="!dynamicForm.valid">Submit</button>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -59,12 +54,16 @@
           <div layout="row" layout-align="start center" class="pad-sm">
             <mat-form-field class="pad-right" floatLabel="never">
               <mat-select placeholder="Select element type" [(ngModel)]="type" name="type" required>
-                <mat-option *ngFor="let option of elementOptions" [value]="option">
-                  {{ option }}
-                </mat-option>
+                <mat-option *ngFor="let option of elementOptions" [value]="option"> {{ option }} </mat-option>
               </mat-select>
             </mat-form-field>
-            <button matTooltip="Add this element" mat-mini-fab color="accent" [disabled]="!addForm.valid" (click)="addElement()">
+            <button
+              matTooltip="Add this element"
+              mat-mini-fab
+              color="accent"
+              [disabled]="!addForm.valid"
+              (click)="addElement()"
+            >
               <mat-icon>add</mat-icon>
             </button>
           </div>
@@ -75,82 +74,76 @@
             <mat-divider [inset]="true"></mat-divider>
             <div class="pad" layout="column">
               <div layout="row">
-                <mat-form-field *ngIf="!isMinMaxSupported(model.type)"class="pad-right-xs" flex>
-                  <input matInput
-                        placeholder="Default"
-                        [(ngModel)]="model.default"
-                        name="default">
+                <mat-form-field *ngIf="!isMinMaxSupported(model.type)" class="pad-right-xs" flex>
+                  <input matInput placeholder="Default" [(ngModel)]="model.default" name="default" />
                 </mat-form-field>
                 <mat-form-field *ngIf="!isDate(model.type) && isMinMaxSupported(model.type)" class="pad-right-xs" flex>
-                  <input matInput type="number" placeholder="Default" [(ngModel)]="model.default" name="default">
+                  <input matInput type="number" placeholder="Default" [(ngModel)]="model.default" name="default" />
                 </mat-form-field>
                 <mat-form-field *ngIf="isDate(model.type) && isMinMaxSupported(model.type)" class="pad-right-xs" flex>
-                  <input matInput
-                        [matDatepicker]="defaultDatepicker"
-                        placeholder="Default"
-                        [(ngModel)]="model.default"
-                        name="default">
+                  <input
+                    matInput
+                    [matDatepicker]="defaultDatepicker"
+                    placeholder="Default"
+                    [(ngModel)]="model.default"
+                    name="default"
+                  />
                   <mat-datepicker-toggle matSuffix [for]="defaultDatepicker"></mat-datepicker-toggle>
                   <mat-datepicker #defaultDatepicker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div layout="row">
                 <mat-form-field class="pad-right-xs" flex>
-                  <input matInput
-                        placeholder="Label"
-                        [(ngModel)]="model.label"
-                        name="label">
+                  <input matInput placeholder="Label" [(ngModel)]="model.label" name="label" />
                 </mat-form-field>
                 <mat-form-field flex="30">
-                  <input matInput
-                        type="number"
-                        min="0"
-                        max="100"
-                        placeholder="Flex (width in %)"
-                        [(ngModel)]="model.flex"
-                        name="flex">
+                  <input
+                    matInput
+                    type="number"
+                    min="0"
+                    max="100"
+                    placeholder="Flex (width in %)"
+                    [(ngModel)]="model.flex"
+                    name="flex"
+                  />
                 </mat-form-field>
               </div>
               <div *ngIf="isMinMaxSupported(model.type)" layout="row">
                 <mat-form-field *ngIf="!isDate(model.type)" class="pad-right-xs" flex>
-                  <input matInput type="number" placeholder="Min" [(ngModel)]="model.min" name="min">
+                  <input matInput type="number" placeholder="Min" [(ngModel)]="model.min" name="min" />
                 </mat-form-field>
                 <mat-form-field *ngIf="isDate(model.type)" class="pad-right-xs" flex>
-                  <input matInput
-                        [matDatepicker]="minDatepicker"
-                        placeholder="Min"
-                        [(ngModel)]="model.min"
-                        name="min">
+                  <input
+                    matInput
+                    [matDatepicker]="minDatepicker"
+                    placeholder="Min"
+                    [(ngModel)]="model.min"
+                    name="min"
+                  />
                   <mat-datepicker-toggle matSuffix [for]="minDatepicker"></mat-datepicker-toggle>
                   <mat-datepicker #minDatepicker></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field *ngIf="!isDate(model.type)" flex="50">
-                  <input matInput type="number" placeholder="Max" [(ngModel)]="model.max" name="max">
+                  <input matInput type="number" placeholder="Max" [(ngModel)]="model.max" name="max" />
                 </mat-form-field>
                 <mat-form-field *ngIf="isDate(model.type)" flex="50">
-                  <input matInput
-                        [matDatepicker]="maxDatepicker"
-                        placeholder="Max"
-                        [(ngModel)]="model.max"
-                        name="max">
+                  <input
+                    matInput
+                    [matDatepicker]="maxDatepicker"
+                    placeholder="Max"
+                    [(ngModel)]="model.max"
+                    name="max"
+                  />
                   <mat-datepicker-toggle matSuffix [for]="maxDatepicker"></mat-datepicker-toggle>
                   <mat-datepicker #maxDatepicker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div *ngIf="isMinMaxLengthSupported(model.type)" layout="row">
                 <mat-form-field class="pad-right-xs" flex>
-                  <input matInput
-                        type="text"
-                        placeholder="MinLength"
-                        [(ngModel)]="model.minLength"
-                        name="min">
+                  <input matInput type="text" placeholder="MinLength" [(ngModel)]="model.minLength" name="min" />
                 </mat-form-field>
                 <mat-form-field flex="50">
-                  <input matInput
-                        type="text"
-                        placeholder="MaxLength"
-                        [(ngModel)]="model.maxLength"
-                        name="max">
+                  <input matInput type="text" placeholder="MaxLength" [(ngModel)]="model.maxLength" name="max" />
                 </mat-form-field>
               </div>
               <div layout="row">
@@ -184,10 +177,10 @@
         <td-dynamic-forms [elements]="textElements">
           <ng-template let-element ngFor [ngForOf]="textElements">
             <ng-template let-control="control" [tdDynamicFormsError]="element.name">
-                <span *ngIf="control.touched || !control.pristine">
-                  <span *ngIf="control.hasError('minlength')">Min length value: {{element.minLength}}</span>
-                  <span *ngIf="control.hasError('maxlength')">Max length value: {{element.minLength}}</span>
-                </span>
+              <span *ngIf="control.touched || !control.pristine">
+                <span *ngIf="control.hasError('minlength')">Min length value: {{ element.minLength }}</span>
+                <span *ngIf="control.hasError('maxlength')">Max length value: {{ element.minLength }}</span>
+              </span>
             </ng-template>
           </ng-template>
         </td-dynamic-forms>
@@ -230,8 +223,8 @@
           <ng-template let-element ngFor [ngForOf]="numberElements">
             <ng-template let-control="control" [tdDynamicFormsError]="element.name">
               <span *ngIf="control.touched || !control.pristine">
-                <span *ngIf="control.hasError('min')">Min value: {{element.min}}</span>
-                <span *ngIf="control.hasError('max')">Max value: {{element.max}}</span>
+                <span *ngIf="control.hasError('min')">Min value: {{ element.min }}</span>
+                <span *ngIf="control.hasError('max')">Max value: {{ element.max }}</span>
               </span>
             </ng-template>
           </ng-template>
@@ -271,10 +264,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <div class="pad-sm">
-          <td-dynamic-forms [elements]="booleanElements">
-          </td-dynamic-forms>
-        </div>
+        <div class="pad-sm"><td-dynamic-forms [elements]="booleanElements"> </td-dynamic-forms></div>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -303,8 +293,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-dynamic-forms [elements]="dateElements">
-        </td-dynamic-forms>
+        <td-dynamic-forms [elements]="dateElements"> </td-dynamic-forms>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -333,8 +322,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-dynamic-forms [elements]="arrayElements">
-        </td-dynamic-forms>
+        <td-dynamic-forms [elements]="arrayElements"> </td-dynamic-forms>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -363,8 +351,7 @@
     <mat-tab-group mat-stretch-tabs dynamicHeight>
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
-        <td-dynamic-forms [elements]="fileElements">
-        </td-dynamic-forms>
+        <td-dynamic-forms [elements]="fileElements"> </td-dynamic-forms>
       </mat-tab>
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
@@ -400,8 +387,8 @@
               <span *ngIf="control.touched || !control.pristine">
                 <span *ngIf="control.hasError('even')">Must be even.</span>
                 <span *ngIf="control.hasError('odd')">Must be odd.</span>
-                <span *ngIf="control.hasError('min')">Must be greater than {{element.min}}.</span>
-                <span *ngIf="control.hasError('max')">Must be less than {{element.max}}.</span>
+                <span *ngIf="control.hasError('min')">Must be greater than {{ element.min }}.</span>
+                <span *ngIf="control.hasError('max')">Must be less than {{ element.max }}.</span>
               </span>
             </ng-template>
           </ng-template>
@@ -469,7 +456,9 @@
             <span *ngIf="control.touched || !control.pristine">
               <span *ngIf="control.hasError('oneNumber')">Must contain at least 1 number.</span>
               <span *ngIf="control.hasError('length')">Password needs from 8 - 20 characters.</span>
-              <span *ngIf="control.hasError('oneSpecialChar')">Need at least one special character (!, @, #, $, %).</span>
+              <span *ngIf="control.hasError('oneSpecialChar')"
+                >Need at least one special character (!, @, #, $, %).</span
+              >
             </span>
           </ng-template>
         </td-dynamic-forms>
@@ -581,7 +570,13 @@
           </ng-template>
 
           <mat-card-actions>
-            <button mat-raised-button (click)="submitManualValidator()" color="primary" class="text-upper" [disabled]="!manualValidateForm.valid">
+            <button
+              mat-raised-button
+              (click)="submitManualValidator()"
+              color="primary"
+              class="text-upper"
+              [disabled]="!manualValidateForm.valid"
+            >
               Submit
             </button>
           </mat-card-actions>

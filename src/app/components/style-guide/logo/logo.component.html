@@ -3,7 +3,7 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <p class="mat-body-1">Your company logo can be implemented with <code>mat-icon</code>.</p>
-    
+
     <p class="mat-body-1">For example:</p>
     <!-- prettier-ignore -->
     <td-highlight lang="html">
@@ -13,10 +13,13 @@
     </td-highlight>
     <p class="mat-body-1">The code above will output an inline SVG with 100px width and auto height:</p>
     <mat-icon class="mat-icon-logo" svgIcon="teradata-dark"></mat-icon>
-    <div class="pad-top pad-bottom">
-      <mat-divider></mat-divider>
-    </div>
-    <td-message class="push-bottom" sublabel="Tip: if you need a custom logo size use this snippet with your logo size in /src/styles.scss" color="light-blue" icon="info"></td-message>
+    <div class="pad-top pad-bottom"><mat-divider></mat-divider></div>
+    <td-message
+      class="push-bottom"
+      sublabel="Tip: if you need a custom logo size use this snippet with your logo size in /src/styles.scss"
+      color="light-blue"
+      icon="info"
+    ></td-message>
     <!-- prettier-ignore -->
     <td-highlight lang="css">
       <![CDATA[
@@ -36,13 +39,9 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <td-layout-nav logo="teradata" color="accent" toolbarTitle="App Title">
-      <button mat-icon-button td-menu-button tdLayoutToggle>
-        <mat-icon>menu</mat-icon>
-      </button>
+      <button mat-icon-button td-menu-button tdLayoutToggle><mat-icon>menu</mat-icon></button>
     </td-layout-nav>
-    <div class="pad-top pad-bottom">
-      <mat-divider></mat-divider>
-    </div>
+    <div class="pad-top pad-bottom"><mat-divider></mat-divider></div>
     <!-- prettier-ignore -->
     <td-highlight lang="html">
       <![CDATA[
@@ -67,22 +66,22 @@
   <mat-card-content>
     <div class="md-padding bgc-grey-200">
       <td-layout mode="side" opened="true">
-        <td-navigation-drawer flex logo="teradata-dark" sidenavTitle="App Title" name="Firstname Lastname" email="firstname.lastname@company.com">
-          <div class="pad">
-            sidenav content
-          </div>
+        <td-navigation-drawer
+          flex
+          logo="teradata-dark"
+          sidenavTitle="App Title"
+          name="Firstname Lastname"
+          email="firstname.lastname@company.com"
+        >
+          <div class="pad">sidenav content</div>
         </td-navigation-drawer>
         <div td-sidenav-content class="td-layout-footer pad">
-          <span class="mat-caption tc-grey-500">&copy;{{year}} Teradata. All Rights Reserved</span>
+          <span class="mat-caption tc-grey-500">&copy;{{ year }} Teradata. All Rights Reserved</span>
         </div>
-        <div class="pad">
-          main content
-        </div>
+        <div class="pad">main content</div>
       </td-layout>
     </div>
-    <div class="pad-top pad-bottom">
-      <mat-divider></mat-divider>
-    </div>
+    <div class="pad-top pad-bottom"><mat-divider></mat-divider></div>
     <!-- prettier-ignore -->
     <td-highlight lang="html">
       <![CDATA[
@@ -100,6 +99,8 @@
   </mat-card-content>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <a mat-button color="primary" [routerLink]="['/design-patterns', 'navigation-drawer']" class="text-upper">Navigation Drawer</a>
+    <a mat-button color="primary" [routerLink]="['/design-patterns', 'navigation-drawer']" class="text-upper"
+      >Navigation Drawer</a
+    >
   </mat-card-actions>
 </mat-card>

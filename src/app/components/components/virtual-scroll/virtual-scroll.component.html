@@ -1,16 +1,12 @@
 <mat-card>
   <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
     <span flex></span>
-    <button mat-icon-button
-            matTooltip="View Source"
-            (click)="toggleDemoCode = !toggleDemoCode">
+    <button mat-icon-button matTooltip="View Source" (click)="toggleDemoCode = !toggleDemoCode">
       <mat-icon class="tc-grey-700">code</mat-icon>
     </button>
   </div>
   <mat-card-title>Virtual Scroll</mat-card-title>
-  <mat-card-subtitle>
-    Scroll virtually on a set of items
-  </mat-card-subtitle>
+  <mat-card-subtitle> Scroll virtually on a set of items </mat-card-subtitle>
   <mat-divider></mat-divider>
   <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleDemoCode">
     <mat-tab-group mat-stretch-tabs dynamicHeight>
@@ -62,16 +58,14 @@
     <mat-divider></mat-divider>
   </div>
   <mat-list>
-    <mat-list-item>
-      Column Header
-    </mat-list-item>
+    <mat-list-item> Column Header </mat-list-item>
     <mat-divider></mat-divider>
     <td-virtual-scroll-container #virtualScroll [style.height.px]="400" [data]="data">
       <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
         <mat-list-item>
           <mat-icon matListAvatar>person</mat-icon>
-          <h4 matLine>{{row.name}}</h4>
-          <p matLine>Row: {{row.index}}</p>
+          <h4 matLine>{{ row.name }}</h4>
+          <p matLine>Row: {{ row.index }}</p>
         </mat-list-item>
         <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
       </ng-template>
@@ -79,31 +73,21 @@
   </mat-list>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button class="text-upper" (click)="virtualScroll.scrollToStart()">
-      Scroll to first
-    </button>
-    <button mat-button class="text-upper" (click)="virtualScroll.scrollToEnd()">
-      Scroll to last
-    </button>
-    <button mat-button class="text-upper" (click)="virtualScroll.scrollTo(400)">
-      Scroll to 400th row
-    </button>
+    <button mat-button class="text-upper" (click)="virtualScroll.scrollToStart()">Scroll to first</button>
+    <button mat-button class="text-upper" (click)="virtualScroll.scrollToEnd()">Scroll to last</button>
+    <button mat-button class="text-upper" (click)="virtualScroll.scrollTo(400)">Scroll to 400th row</button>
   </mat-card-actions>
 </mat-card>
 
 <mat-card>
   <div class="pad-left pad-right bgc-grey-100" layout="row" layout-align="start center">
     <span flex></span>
-    <button mat-icon-button
-            matTooltip="View Source"
-            (click)="toggleDemoCode = !toggleDemoCode">
+    <button mat-icon-button matTooltip="View Source" (click)="toggleDemoCode = !toggleDemoCode">
       <mat-icon class="tc-grey-700">code</mat-icon>
     </button>
   </div>
   <mat-card-title>Virtual Scroll with Infinite Scroll</mat-card-title>
-  <mat-card-subtitle>
-    Infinite scroll
-  </mat-card-subtitle>
+  <mat-card-subtitle> Infinite scroll </mat-card-subtitle>
   <mat-divider></mat-divider>
   <div [style.overflow]="'hidden'" [@tdCollapse]="!toggleDemoCode">
     <mat-tab-group mat-stretch-tabs dynamicHeight>
@@ -172,30 +156,24 @@
     <mat-divider></mat-divider>
   </div>
   <mat-list>
-    <mat-list-item>
-      Column Header
-    </mat-list-item>
+    <mat-list-item> Column Header </mat-list-item>
     <mat-divider></mat-divider>
     <td-virtual-scroll-container #infiniteScroll [style.height.px]="400" [data]="infiniteData" (bottom)="fetchMore()">
       <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
         <mat-list-item>
           <mat-icon matListAvatar>person</mat-icon>
-          <h4 matLine>{{row.name}}</h4>
-          <p matLine>Row: {{row.index}}</p>
+          <h4 matLine>{{ row.name }}</h4>
+          <p matLine>Row: {{ row.index }}</p>
         </mat-list-item>
         <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
       </ng-template>
     </td-virtual-scroll-container>
   </mat-list>
-  <div *tdLoading="'loading'; mode:'indeterminate'; type:'linear'; strategy:'overlay'"></div>
+  <div *tdLoading="'loading'; mode: 'indeterminate'; type: 'linear'; strategy: 'overlay'"></div>
   <mat-divider></mat-divider>
   <mat-card-actions>
-    <button mat-button class="text-upper" (click)="infiniteScroll.scrollToStart()">
-      Scroll to first
-    </button>
-    <button mat-button class="text-upper" (click)="infiniteScroll.scrollToEnd()">
-      Scroll to last
-    </button>
+    <button mat-button class="text-upper" (click)="infiniteScroll.scrollToStart()">Scroll to first</button>
+    <button mat-button class="text-upper" (click)="infiniteScroll.scrollToEnd()">Scroll to last</button>
   </mat-card-actions>
 </mat-card>
 

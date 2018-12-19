@@ -8,10 +8,7 @@
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
         <mat-toolbar color="accent">
-          <button mat-icon-button>
-            <mat-icon>menu</mat-icon>
-          </button>
-          <span>Toolbar</span>
+          <button mat-icon-button><mat-icon>menu</mat-icon></button> <span>Toolbar</span>
           <td-search-box placeholder="Search" [alwaysVisible]="false" flex></td-search-box>
           <td-notification-count color="primary" positionX="before" [notifications]="true">
             <mat-icon>person</mat-icon>
@@ -20,7 +17,7 @@
             <mat-icon>messages</mat-icon>
           </td-notification-count>
           <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
-            <td-notification-count [notifications]="101" [limit]=50>
+            <td-notification-count [notifications]="101" [limit]="50">
               <mat-icon>notifications</mat-icon>
             </td-notification-count>
           </button>
@@ -28,18 +25,20 @@
             <td-menu>
               <div td-menu-header class="mat-subheading-2 push-none">Notifications</div>
               <mat-nav-list dense>
-                <ng-template let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
+                <ng-template let-last="last" ngFor [ngForOf]="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
                   <a mat-list-item>
                     <mat-icon matListAvatar>today</mat-icon>
-                    <h4 matLine><span class="text-wrap">A user did an activity on an item that you've subscribed to follow actions on.</span></h4>
+                    <h4 matLine>
+                      <span class="text-wrap"
+                        >A user did an activity on an item that you've subscribed to follow actions on.</span
+                      >
+                    </h4>
                     <p matLine>22 minutes ago</p>
                   </a>
                   <mat-divider *ngIf="!last"></mat-divider>
                 </ng-template>
               </mat-nav-list>
-              <button mat-button color="accent" td-menu-footer>
-                See All Notifications
-              </button>
+              <button mat-button color="accent" td-menu-footer>See All Notifications</button>
             </td-menu>
           </mat-menu>
           <button mat-icon-button [matMenuTriggerFor]="toolbarMenu1"><mat-icon>more_vert</mat-icon></button>
@@ -125,8 +124,7 @@
             <ng-template matTabLabel>
               <div layout="row" layout-align="center center">
                 Activities
-                <td-notification-count color="primary" [notifications]="true">
-                </td-notification-count>
+                <td-notification-count color="primary" [notifications]="true"> </td-notification-count>
               </div>
             </ng-template>
           </mat-tab>
@@ -134,17 +132,15 @@
             <ng-template matTabLabel>
               <div layout="row" layout-align="center center">
                 Logs
-                <td-notification-count color="warn" [notifications]="0">
-                </td-notification-count>
+                <td-notification-count color="warn" [notifications]="0"> </td-notification-count>
               </div>
             </ng-template>
           </mat-tab>
           <mat-tab>
             <ng-template matTabLabel>
               <div layout="row" layout-align="center center">
-                Chats 
-                <td-notification-count color="accent" [notifications]="12">
-                </td-notification-count>
+                Chats
+                <td-notification-count color="accent" [notifications]="12"> </td-notification-count>
               </div>
             </ng-template>
           </mat-tab>
@@ -200,29 +196,26 @@
         <mat-nav-list dense flex>
           <a mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
-            <h3 matLine> Jyn Erso stole the plans to the Death Star </h3>
-            <p matLine> 10 mins ago </p>
+            <h3 matLine>Jyn Erso stole the plans to the Death Star</h3>
+            <p matLine>10 mins ago</p>
             <span></span>
-            <td-notification-count color="accent" [notifications]="1">
-            </td-notification-count>
+            <td-notification-count color="accent" [notifications]="1"> </td-notification-count>
           </a>
           <mat-divider [inset]="true"></mat-divider>
           <a mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
-            <h3 matLine> Something something something.. dark side. </h3>
-            <p matLine> 9 hours ago </p>
+            <h3 matLine>Something something something.. dark side.</h3>
+            <p matLine>9 hours ago</p>
             <span></span>
-            <td-notification-count color="primary" [notifications]="0">
-            </td-notification-count>
+            <td-notification-count color="primary" [notifications]="0"> </td-notification-count>
           </a>
           <mat-divider [inset]="true"></mat-divider>
           <a mat-list-item>
             <mat-icon matListAvatar>person</mat-icon>
-            <h3 matLine> Chirrut Îmwe beat down a bunch of storm troopers with a stick </h3>
-            <p matLine> 2 days ago </p>
+            <h3 matLine>Chirrut Îmwe beat down a bunch of storm troopers with a stick</h3>
+            <p matLine>2 days ago</p>
             <span></span>
-            <td-notification-count [notifications]="true">
-            </td-notification-count>
+            <td-notification-count [notifications]="true"> </td-notification-count>
           </a>
         </mat-nav-list>
       </mat-tab>
