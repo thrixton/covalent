@@ -10,7 +10,6 @@ import { catchError } from 'rxjs/operators';
   templateUrl: './readme-loader.component.html',
 })
 export class TdReadmeLoaderComponent {
-
   @Input()
   set resourceUrl(resourceUrl: string) {
     if (resourceUrl) {
@@ -20,18 +19,19 @@ export class TdReadmeLoaderComponent {
 
   content: string;
 
-  constructor(private _http: HttpClient,
-              private _sanitizer: Sanitizer,
-              private _changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    private _http: HttpClient,
+    private _sanitizer: Sanitizer,
+    private _changeDetectorRef: ChangeDetectorRef,
+  ) {}
 
   async loadResource(resourceUrl: string): Promise<void> {
     try {
-      this.content = await this._http.get(resourceUrl, {responseType: 'text'}).toPromise();
+      this.content = await this._http.get(resourceUrl, { responseType: 'text' }).toPromise();
     } catch (error) {
       this.content = 'Warning: Resource could not be loaded.';
     } finally {
       this._changeDetectorRef.markForCheck();
     }
   }
-
 }

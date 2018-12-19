@@ -1,4 +1,14 @@
-import { Component, AfterViewInit, ElementRef, Input, Output, EventEmitter, Renderer2, SecurityContext, OnChanges } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  Input,
+  Output,
+  EventEmitter,
+  Renderer2,
+  SecurityContext,
+  OnChanges,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare const require: any;
@@ -11,7 +21,6 @@ let showdown: any = require('showdown/dist/showdown.js');
   templateUrl: './markdown.component.html',
 })
 export class TdMarkdownComponent implements OnChanges, AfterViewInit {
-
   private _content: string;
   private _simpleLineBreaks: boolean = false;
 
@@ -45,9 +54,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
    */
   @Output('contentReady') onContentReady: EventEmitter<undefined> = new EventEmitter<undefined>();
 
-  constructor(private _renderer: Renderer2,
-              private _elementRef: ElementRef,
-              private _domSanitizer: DomSanitizer) {}
+  constructor(private _renderer: Renderer2, private _elementRef: ElementRef, private _domSanitizer: DomSanitizer) {}
 
   ngOnChanges(): void {
     this.refresh();
@@ -91,8 +98,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
 
   private _render(markdown: string): string {
     // Trim leading and trailing newlines
-    markdown = markdown.replace(/^(\s|\t)*\n+/g, '')
-                       .replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
+    markdown = markdown.replace(/^(\s|\t)*\n+/g, '').replace(/(\s|\t)*\n+(\s|\t)*$/g, '');
     // Split markdown by line characters
     let lines: string[] = markdown.split('\n');
 
@@ -106,7 +112,7 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     });
 
     // Join lines again with line characters
-    let markdownToParse: string =  lines.join('\n');
+    let markdownToParse: string = lines.join('\n');
 
     // Convert markdown into html
     let converter: any = new showdown.Converter();
@@ -117,5 +123,4 @@ export class TdMarkdownComponent implements OnChanges, AfterViewInit {
     let html: string = converter.makeHtml(markdownToParse);
     return html;
   }
-
 }

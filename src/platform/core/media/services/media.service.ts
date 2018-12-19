@@ -3,12 +3,11 @@ import { Observable, BehaviorSubject, Subscription, fromEvent } from 'rxjs';
 
 @Injectable()
 export class TdMediaService {
-
   private _resizing: boolean = false;
   private _globalSubscription: Subscription;
   private _queryMap: Map<string, string> = new Map<string, string>();
-  private _querySources: { [key: string]: BehaviorSubject<boolean>} = {};
-  private _queryObservables: {[key: string]: Observable<boolean>} = {};
+  private _querySources: { [key: string]: BehaviorSubject<boolean> } = {};
+  private _queryObservables: { [key: string]: Observable<boolean> } = {};
 
   constructor(private _ngZone: NgZone) {
     this._queryMap.set('xs', '(max-width: 599px)');
@@ -100,8 +99,7 @@ export class TdMediaService {
   }
 }
 
-export function MEDIA_PROVIDER_FACTORY(
-    parent: TdMediaService, ngZone: NgZone): TdMediaService {
+export function MEDIA_PROVIDER_FACTORY(parent: TdMediaService, ngZone: NgZone): TdMediaService {
   return parent || new TdMediaService(ngZone);
 }
 

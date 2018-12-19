@@ -26,23 +26,9 @@ const TD_DATA_TABLE: Type<any>[] = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatCheckboxModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatPseudoCheckboxModule,
-  ],
-  declarations: [
-    TD_DATA_TABLE,
-  ],
-  exports: [
-    TD_DATA_TABLE,
-  ],
-  providers: [
-    DATA_TABLE_PROVIDER,
-  ],
+  imports: [CommonModule, MatCheckboxModule, MatTooltipModule, MatIconModule, MatPseudoCheckboxModule],
+  declarations: [TD_DATA_TABLE],
+  exports: [TD_DATA_TABLE],
+  providers: [DATA_TABLE_PROVIDER],
 })
-export class CovalentDataTableModule {
-
-}
+export class CovalentDataTableModule {}

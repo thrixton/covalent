@@ -11,13 +11,10 @@ import { FormsModule } from '@angular/forms';
 // Form Directives
 import { TdAutoTrimDirective } from './forms/auto-trim/auto-trim.directive';
 
-const TD_FORMS: Type<any>[] = [
-  TdAutoTrimDirective,
-];
+const TD_FORMS: Type<any>[] = [TdAutoTrimDirective];
 
 // Validators
-const TD_VALIDATORS: Type<any>[] = [
-];
+const TD_VALIDATORS: Type<any>[] = [];
 
 /**
  * PIPES
@@ -48,27 +45,9 @@ import { RouterPathService } from './services/router-path.service';
 import { IconService } from './services/icon.service';
 
 @NgModule({
-  imports: [
-    FormsModule,
-    CommonModule,
-  ],
-  declarations: [
-    TD_FORMS,
-    TD_PIPES,
-    TD_VALIDATORS,
-  ],
-  exports: [
-    FormsModule,
-    CommonModule,
-    TD_FORMS,
-    TD_PIPES,
-    TD_VALIDATORS,
-  ],
-  providers: [
-    RouterPathService,
-    IconService,
-  ],
+  imports: [FormsModule, CommonModule],
+  declarations: [TD_FORMS, TD_PIPES, TD_VALIDATORS],
+  exports: [FormsModule, CommonModule, TD_FORMS, TD_PIPES, TD_VALIDATORS],
+  providers: [RouterPathService, IconService],
 })
-export class CovalentCommonModule {
-
-}
+export class CovalentCommonModule {}

@@ -20,14 +20,8 @@ import { TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective } fro
     CovalentHighlightModule,
     CovalentMarkdownModule,
   ],
-  declarations: [
-    TdFlavoredListComponent,
-    TdFlavoredMarkdownComponent,
-    TdFlavoredMarkdownContainerDirective,
-  ],
-  exports: [
-    TdFlavoredMarkdownComponent,
-  ],
+  declarations: [TdFlavoredListComponent, TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective],
+  exports: [TdFlavoredMarkdownComponent],
   entryComponents: [
     TdDataTableComponent,
     TdMarkdownComponent,
@@ -36,5 +30,4 @@ import { TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective } fro
     TdFlavoredListComponent,
   ],
 })
-export class CovalentFlavoredMarkdownModule {
-}
+export class CovalentFlavoredMarkdownModule {}
