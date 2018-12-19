@@ -9,32 +9,30 @@ var sassImporter = require('./sass-importer');
 const config = require('../build.conf');
 
 gulp.task('move-required-core-files', 'Move required sass files', function() {
-  return gulp
-    .src(config.paths.PostNgPackngrBuildRequiredFiles)
-    .pipe(gulp.dest(config.deployed + 'core'));
+  return gulp.src(config.paths.PostNgPackngrBuildRequiredFiles).pipe(gulp.dest(config.deployed + 'core'));
 });
 
-
 gulp.task('move-additional-platform-files', 'Move additional platform files', function() {
-  return gulp
-    .src(config.paths.PostNgPackngrAdditionalFiles)
-    .pipe(gulp.dest(config.deployed));
+  return gulp.src(config.paths.PostNgPackngrAdditionalFiles).pipe(gulp.dest(config.deployed));
 });
 
 gulp.task('compile-core-sass', 'compile some core sass to css', function() {
   return gulp
     .src(config.paths.PostNgPackngrCompileStyles)
     .pipe(sourcemaps.init())
-    .pipe(sass({
-      errLogToConsole: true,
-      importer: sassImporter,
-    }))
-    .pipe(postcss([autoprefixer({
-        browsers: [
-          'last 2 versions',
-          'ie 11'
-        ]
-      })]))
+    .pipe(
+      sass({
+        errLogToConsole: true,
+        importer: sassImporter,
+      }),
+    )
+    .pipe(
+      postcss([
+        autoprefixer({
+          browsers: ['last 2 versions', 'ie 11'],
+        }),
+      ]),
+    )
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.deployed + 'core'));
 });
