@@ -266,6 +266,7 @@ class TdMarkdownEmptyStaticContentTestRenderingComponent { }
 
 @Component({
   template: `
+      <!-- prettier-ignore -->
       <td-markdown>
         # title
 
@@ -286,6 +287,7 @@ class TdMarkdownDymanicContentTestRenderingComponent {
 
 @Component({
   template: `
+      <!-- prettier-ignore -->
       <td-markdown [simpleLineBreaks]="simpleLineBreaks">
         first line
         second line
@@ -310,6 +312,7 @@ class TdMarkdownEmptyStaticContentTestEventsComponent {
 
 @Component({
   template: `
+      <!-- prettier-ignore -->
       <td-markdown (contentReady)="tdMarkdownContentIsReady()">
         # title
 

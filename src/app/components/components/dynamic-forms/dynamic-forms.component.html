@@ -22,6 +22,7 @@
         </mat-card-title>
         <mat-divider></mat-divider>
         <div [style.overflow]="'hidden'" [@tdCollapse]="!showDynamicCode">
+          <!-- prettier-ignore -->
           <td-highlight language="json" [content]="dynamicElements | json"></td-highlight>
         </div>
         <div class="pad">
@@ -194,6 +195,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="textElements">
@@ -209,6 +211,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           {{textElements | json}}
         </td-highlight>
@@ -237,6 +240,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="numberElements">
@@ -252,6 +256,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           {{numberElements | json}}
         </td-highlight>
@@ -274,6 +279,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="booleanElements">
@@ -281,6 +287,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           {{booleanElements | json}}
         </td-highlight>
@@ -302,6 +309,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="dateElements">
@@ -309,6 +317,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           {{dateElements | json}}
         </td-highlight>
@@ -330,6 +339,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="arrayElements">
@@ -337,6 +347,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           {{arrayElements | json}}
         </td-highlight>
@@ -358,6 +369,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="fileElements">
@@ -365,6 +377,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           {{fileElements | json}}
         </td-highlight>
@@ -397,6 +410,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="customValidationElements">
@@ -414,6 +428,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             customValidationElements: ITdDynamicElementConfig[] = [{
@@ -462,6 +477,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms #customValidateForm [elements]="multipleValidatorTypes">
@@ -476,6 +492,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             multipleValidatorTypes: ITdDynamicElementConfig[] = [{
@@ -522,6 +539,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms #customValidateForm [elements]="angularValidators">
@@ -534,6 +552,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             angularValidators: ITdDynamicElementConfig[] = [{
@@ -571,6 +590,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms #manualValidateForm [elements]="manualValidatorElement">
@@ -592,6 +612,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             manualValidatorElement: ITdDynamicElementConfig[] = [{
@@ -634,6 +655,7 @@
         <ng-template matTabLabel>Code</ng-template>
         <h4>Setup</h4>
         <p>Custom Component:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             import { Component, TemplateRef } from '@angular/core';
@@ -666,6 +688,7 @@
           ]]>
         </td-highlight>
         <p>Module imports:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             @NgModule({
@@ -688,6 +711,7 @@
         </td-highlight>
         <h4>Usage:</h4>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-dynamic-forms [elements]="customElements">
@@ -702,6 +726,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             customElements: ITdDynamicElementConfig[] = [{

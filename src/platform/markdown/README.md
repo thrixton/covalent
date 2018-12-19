@@ -74,6 +74,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 **Html:**
 
 ```html
+<!-- prettier-ignore -->
 <td-markdown>
   # Heading
   ## Sub Heading (H2)

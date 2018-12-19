@@ -101,6 +101,7 @@ Example for **HTML** usage:
 Example for **CSS** usage:
 
 ```html
+<!-- prettier-ignore -->
 <td-highlight lang="css">    
   <![CDATA[   
     pre {
@@ -125,6 +126,7 @@ Example for **CSS** usage:
 Example for **Typescript**:
 
 ```html
+<!-- prettier-ignore -->
 <td-highlight lang="typescript">
   <![CDATA[
     import { Injectable } from '@angular/core';

@@ -43,6 +43,7 @@
       <mat-tab>
         <ng-template matTabLabel>Code</ng-template>
         <p>HTML:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="html">
           <![CDATA[
             <td-steps>
@@ -71,6 +72,7 @@
           ]]>
         </td-highlight>
         <p>Typescript:</p>
+        <!-- prettier-ignore -->
         <td-highlight lang="typescript">
           <![CDATA[
             import { StepState } from '@covalent/core/steps';
@@ -129,6 +131,7 @@
     </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
+    <!-- prettier-ignore -->
     <td-highlight lang="html">
       <![CDATA[
         <td-steps (stepChange)="change($event)" mode="'vertical'|'horizontal'">
@@ -140,6 +143,7 @@
       ]]>
     </td-highlight>
     <p>Typescript:</p>
+    <!-- prettier-ignore -->
     <td-highlight lang="typescript">
       <![CDATA[
         import { IStepChangeEvent } from '@covalent/core/steps';
@@ -154,6 +158,7 @@
     </td-highlight>
     <h3>Setup:</h3>
     <p>Import the [CovalentStepsModule] in your NgModule:</p>
+    <!-- prettier-ignore -->
     <td-highlight lang="typescript">
       <![CDATA[
         import { CovalentStepsModule } from '@covalent/core/steps';
@@ -193,6 +198,7 @@
     </mat-list>
     <h3>Example:</h3>
     <p>HTML:</p>
+    <!-- prettier-ignore -->
     <td-highlight lang="html">
       <![CDATA[
         <td-step #step label="Label" sublabel="Sublabel" [active]="active" [disabled]="disabled" [state]="state" (activated)="activeEvent()" (deactivated)="deactiveEvent()" [disableRipple]="false">
@@ -211,6 +217,7 @@
       ]]>
     </td-highlight>
     <p>Typescript:</p>
+    <!-- prettier-ignore -->
     <td-highlight lang="typescript">
       <![CDATA[
         import { StepState } from '@covalent/core/steps';

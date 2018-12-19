@@ -80,6 +80,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 ## Example
 
 ```html
+<!-- prettier-ignore -->
 <td-flavored-markdown>
   - [x] checked action
   - [ ] unchecked action
