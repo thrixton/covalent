@@ -34,7 +34,7 @@
     "bundle-report": "npm run build:docs -- --stats-json && webpack-bundle-analyzer dist/stats.json",
     "generate:changelog": "./node_modules/.bin/conventional-changelog -i docs/CHANGELOG.md -s -p angular",
     "a11y": "scripts/a11y/a11y.sh -r scripts/a11y/routes.txt",
-    "prettier": "./node_modules/.bin/prettier --config ./prettier.config.js --write './**/*.{ts,component.ts,js,json,css,scss,component.scss,md,html,component.html}'"
+    "prettier": "./node_modules/.bin/prettier --write './**/*.{ts,js,json,css,scss,md,html}'"
   },
   "husky": {
     "hooks": {
@@ -42,8 +42,8 @@
     }
   },
   "lint-staged": {
-    "*.{ts,component.ts,js,json,css,scss,component.scss,md,html,component.html}": [
-      "./node_modules/.bin/prettier --config ./prettier.config.js --write",
+    "*.{ts,js,json,css,scss,md,html}": [
+      "./node_modules/.bin/prettier --write",
       "git add"
     ]
   },

@@ -2,7 +2,7 @@
 
 `td-highlight` is an @angular component that uses native **@angular** to parse code to HTML elements. It is based on [highlight.js](https://highlightjs.org/) library.
 
-This implementation supports all the Common languages in *highlight.js*.
+This implementation supports all the Common languages in _highlight.js_.
 
 **Note:** This module uses the **DomSanitizer** service to ~sanitize~ the parsed `html` from the `highlight.js` lib to avoid **XSS** issues.
 
@@ -14,15 +14,15 @@ By default, `--dev` build will log the following message in the console to let y
 
 #### Inputs
 
-+ lang: string
-  + Language of the code content to be parsed as highlighted html.
-+ content: string
-  + Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
+- lang: string
+  - Language of the code content to be parsed as highlighted html.
+- content: string
+  - Code content to be parsed as highlighted html. Used to load data dynamically. e.g. `.ts` content.
 
 #### Events
 
-+ contentReady: function
-  + Event emitted after the highlight content rendering is finished.
+- contentReady: function
+  - Event emitted after the highlight content rendering is finished.
 
 ## Installation
 
@@ -59,7 +59,7 @@ The `highlight` module comes with its own default `covalent` theme which you can
 @include covalent-highlight-theme();
 ```
 
-Alternatively, you can use the *highlight.js* pre-built [themes](https://github.com/isagalaev/highlight.js/tree/master/src/styles) by loading them either by an import:
+Alternatively, you can use the _highlight.js_ pre-built [themes](https://github.com/isagalaev/highlight.js/tree/master/src/styles) by loading them either by an import:
 
 ```css
 @import '~highlight.js/styles/vs.css';
@@ -76,18 +76,19 @@ Loading them in the `.angular-cli.json`:
 Or by loading them in the `index.html` file:
 
 ```html
-<link rel="stylesheet" href="/path/to/node_modules/highlight.js/styles/vs.css">
+<link rel="stylesheet" href="/path/to/node_modules/highlight.js/styles/vs.css" />
 ```
 
 ## Usage
 
 Simply wrap your code snippets in `<td-highlight>`. To use HTML brackets `<` and `>` wrap the code with `<![CDATA[` and `]]>;` or replace with HTMLs character entities `&lt;` and `&gt;`.
 
-Also, to display model binding, add spaces between curly braces like: `{ { } }` and wrap them  with `<![CDATA[` and `]]>;`
+Also, to display model binding, add spaces between curly braces like: `{ { } }` and wrap them with `<![CDATA[` and `]]>;`
 
 Example for **HTML** usage:
 
 ```html
+<!-- prettier-ignore -->
 <td-highlight lang="html">
   <![CDATA[
     <td-highlight lang="html">
@@ -122,7 +123,7 @@ Example for **CSS** usage:
   ]]>
 </td-highlight>
 ```
- 
+
 Example for **Typescript**:
 
 ```html
