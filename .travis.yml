@@ -18,7 +18,7 @@ addons:
     build_command: "--no-command --fs-capture-search deploy/"
     branch_pattern: coverity_scan
 node_js:
-- '8.9.4'
+- '10.15.3'
 branches:
   only:
     - coverity_scan
