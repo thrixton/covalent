@@ -14,7 +14,7 @@ addons:
       name: "Teradata/covalent"
       description: "Covalent: UI Platform based on Angular-Material"
     notification_email: jeremy.smartt@teradata.com
-    build_command_prepend: "npm run build"
+    build_command_prepend: "npm run build:lib"
     build_command: "--no-command --fs-capture-search deploy/"
     branch_pattern: coverity_scan
 node_js:
