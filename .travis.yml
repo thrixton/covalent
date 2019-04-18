@@ -7,7 +7,7 @@ env:
    #   via the "travis encrypt" command using the project repo's public key
    - secure: "vIPuOFHpO86NMtemc6W2HL8DfayXYeIkWOoRdCnrCbmr0rIHPIdBYVhqIBVwYvb2KzjzwWfYr1zMeZIw/Ttut0CgsO1RrKn1WrBMtO+SSVW8jTfPDOOeiqeH2ea1QftYPE75WCPnvRVfYm+wjLPE5yP5K70jpJfh8qANes/6tYRkm1CBJZAIcAm0gf5/3++ZThcXZcMcv+28gBlb5GHEct7tT5qHqDGar/LiTBwcNGDqRVqr1fiaduBNrdoGqdyeGp5OSQSUZU3YL/ZfZgNixIsBcEyqY64wHoohhEoUJo/+H5WAlUhsbWjcCzIg8gowhDFnFePdSzwq4DdnTMQVwJIo4WC0DGXW4HhSIPAP6LiKwng45teZessVMsVMDvMZAfpA0cuGaV3V1tQ7IRE1nRoQTxZuulkfZ39G3USAqKHIjCqdg40wnXu4ZY7Xk7L49qSYpuiduH3ransNquy4fbOCIvlOkKjmgtrYpy2Y6YWNA2ZZ+iJmqVV8mkluafyYBHA2F1h9hAuHwnMmGmlZBYnJ0Cxv/gacQhjydy3ox3Tr5EKXzS9pfYbxheC8G0xF2YW/U8AwofRzoAx3otWL7yPiIqMD1evZ0lUJzR17xdrrqLYqoJ0HglJHlCqpyZez+w8FBGhUZMJZ1dksqw5W700FUkAbghmlfPvsQVsn0Tg="
 before_install:
-  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt
 addons:
   coverity_scan:
     project:
