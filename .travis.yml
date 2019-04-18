@@ -1,26 +1,30 @@
 language: node_js
 sudo: required
 dist: trusty
-
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "vIPuOFHpO86NMtemc6W2HL8DfayXYeIkWOoRdCnrCbmr0rIHPIdBYVhqIBVwYvb2KzjzwWfYr1zMeZIw/Ttut0CgsO1RrKn1WrBMtO+SSVW8jTfPDOOeiqeH2ea1QftYPE75WCPnvRVfYm+wjLPE5yP5K70jpJfh8qANes/6tYRkm1CBJZAIcAm0gf5/3++ZThcXZcMcv+28gBlb5GHEct7tT5qHqDGar/LiTBwcNGDqRVqr1fiaduBNrdoGqdyeGp5OSQSUZU3YL/ZfZgNixIsBcEyqY64wHoohhEoUJo/+H5WAlUhsbWjcCzIg8gowhDFnFePdSzwq4DdnTMQVwJIo4WC0DGXW4HhSIPAP6LiKwng45teZessVMsVMDvMZAfpA0cuGaV3V1tQ7IRE1nRoQTxZuulkfZ39G3USAqKHIjCqdg40wnXu4ZY7Xk7L49qSYpuiduH3ransNquy4fbOCIvlOkKjmgtrYpy2Y6YWNA2ZZ+iJmqVV8mkluafyYBHA2F1h9hAuHwnMmGmlZBYnJ0Cxv/gacQhjydy3ox3Tr5EKXzS9pfYbxheC8G0xF2YW/U8AwofRzoAx3otWL7yPiIqMD1evZ0lUJzR17xdrrqLYqoJ0HglJHlCqpyZez+w8FBGhUZMJZ1dksqw5W700FUkAbghmlfPvsQVsn0Tg="
+before_install:
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+addons:
+  coverity_scan:
+    project:
+      name: "Teradata/covalent"
+      description: "Covalent: UI Platform based on Angular-Material"
+    notification_email: jeremy.smartt@teradata.com
+    build_command_prepend: "npm run build"
+    build_command: "--no-command --fs-capture-search deploy/"
+    branch_pattern: coverity_scan
 node_js:
 - '8.9.4'
 branches:
   only:
-    - master
-    - develop
-addons:
-  firefox: latest
-before_script:
-- export CHROME_BIN=chromium-browser
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
+    - coverity_scan
 jobs:
   include:
-    - env: "MODE=lint"
-    - env: "MODE=aot"
-    - env: "MODE=release"
-    - env: "MODE=unit-test"
-    - env: "MODE=a11y"
+    - env: "MODE=coverity"
 install:
 - npm install
 script:
@@ -28,8 +32,3 @@ script:
 cache:
   directories:
     - ./node_modules/
-after_success:
-- test $MODE == "release" && test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm run publish:nightly
-notifications:
-  slack:
-    secure: pkXQL5AZiSBh1yWjilrcA7KbcJjC4xxjhd0SAwogJCQgyEf/i8/CfR1ZXiZYsIBJT6HTI7UMdJzwP6TiY/zih6Mq8PqUg38NUsvGyznILkbksMQJieWrg1r+1ideplPJFX7qdXwrOcxvSVoEFIGha26X0Fglq3kXSBHpPR9U0lDCoUxLUO35txQ/iji85Na4hjQnmtBEQkqaJogA0hRdcSLIKxwScgSrb4UU2PXEaIS9Zpr2SOG/RTOMkrrSMOD7bgocZbhAbk3c5shPZNj51gpEN+692Qxp4kQ/nfT10Hu5ATLaFCM5v04+w0D3ZJLA46LpU47qP0ALy6O9d16pGUcxJGbWaMZpV53vV9jIl9y2ahaqN1h1J9BcLIOzJvaQy92km8F7a3l7cN8gWSUZjs5Hd+gPFQH9Flcydmq26e8Maa1tQDF5R3GIdaCw4qkuJYbl4ToE59wtiPQ6M7xVKqNK4Qypu1YNsKOoLG/tZRFvp4771vgWcR5Lu/DqJJ9SAB0jsdrOXpe+0DmdrLBwhoZv2D9FTce+clDHIJ7ObPEc/UKw8rtWAA5iCPCEJ0sPl+WZwOS3ZFp4QmMC+5mzffMUiX6HBnzxiyOZvYGJD/jTy1yA1Cmt4RJYrOPM73csI1ELs5tj4tvqBNJQ8daIenfkg7u42IJfByDGIsJz8to=
