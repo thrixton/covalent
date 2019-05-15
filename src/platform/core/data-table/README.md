@@ -33,7 +33,7 @@ Use [tdDataTableTemplate] directive for template support which gives context acc
 
 + sortChange: function
   + Event emitted when the column headers are clicked. [sortable] needs to be enabled.
-  + Emits an [ITdDataTableSortEvent] implemented object.
+  + Emits an [ITdDataTableSortChangeEvent] implemented object.
 + rowSelect: function
   + Event emitted when a row is selected/deselected. [selectable] needs to be enabled.
   + Emits an [ITdDataTableSelectEvent] implemented object.
